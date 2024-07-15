@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-        }
+            try
+            {
+                UserInterface userInterface = new UserInterface();
+                userInterface.InterfaceFlow();
+            }
+            catch (Exception ex) { 
+                Console.WriteLine(ex.Message);
+            }
+            
+            }
     }
 }
