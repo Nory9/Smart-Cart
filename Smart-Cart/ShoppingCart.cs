@@ -12,10 +12,14 @@ namespace Smart_Cart
 
         public ShoppingCart() { 
         }   
-        public bool AddProduct(Product product) { 
-            shoppingCart.Add(product);
-            Console.WriteLine($"{product.Name} has been added to the shopping cart successfully"); 
-            return true;
+        public bool AddProduct(Product product) {
+            if (product != null)
+            {
+                shoppingCart.Add(product);
+                Console.WriteLine($"{product.Name} has been added to the shopping cart successfully");
+                return true;
+            }
+            else return false;  
         }
 
         public bool RemoveProduct(int productIndex) {
