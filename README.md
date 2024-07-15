@@ -68,7 +68,6 @@ Represents a clothing store with a list of available products.
 Ensure you have .NET SDK installed. Open a terminal and navigate to the project directory.
     
     ```
-    shCopy code
     dotnet build
     
     ```
@@ -76,7 +75,6 @@ Ensure you have .NET SDK installed. Open a terminal and navigate to the project 
 3. **Run the Application**
     
     ```
-    shCopy code
     dotnet run
     
     ```
