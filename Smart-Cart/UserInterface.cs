@@ -22,8 +22,9 @@ namespace Smart_Cart
                     "2. pizza shop \n" +
                     "3. clothing store\n" +
                     "4. view cart\n" +
-                    "5. check out"+
-                    "\n6. Exit the mall");
+                    "5. remove product from cart\n"+
+                    "6. check out"+
+                    "\n7. Exit the mall");
 
                 string userInput= Console.ReadLine();
                 int userChoise = 0;
@@ -55,12 +56,19 @@ namespace Smart_Cart
                         shoppingCart.ViewAll();
                         break;
 
-                     case "5":
+                    case "5":
+                        shoppingCart.ViewAll();
+                        Console.WriteLine("Select the product you want to delete");
+                        userChoise = Convert.ToInt32((Console.ReadLine()));
+                        shoppingCart.RemoveProduct(userChoise);
+                         break;
+
+                     case "6":
                         decimal cost= shoppingCart.CalculateCost();
                         Console.WriteLine($"Total cost: {cost:C}");
                         break;
 
-                    case "6":
+                    case "7":
                         Environment.Exit(0);    
                         break;
 

@@ -18,18 +18,19 @@ namespace Smart_Cart
             return true;
         }
 
-        public bool RemoveProduct(Product product) {
+        public bool RemoveProduct(int productIndex) {
 
-            if (shoppingCart.Contains(product))
+            if (productIndex > 0 && productIndex <= shoppingCart.Count)
             {
-                shoppingCart.Remove(product);
-                Console.WriteLine($"{product.Name} has been removed successfully");
+                Product product = shoppingCart[productIndex-1];
+                shoppingCart.RemoveAt(productIndex-1);
+                Console.WriteLine($"the {product.Name} has been deleted seccussfully");
                 return true;
             }
             else {
 
-                Console.WriteLine("this item dosent exist in your shopping cart!");
-                return false;   
+                Console.WriteLine("Invalid input or the product doesnt exist try again");
+                return false;
             }
         }
 
@@ -54,9 +55,9 @@ namespace Smart_Cart
               Console.WriteLine(shoppingCart.Count);
             if (shoppingCart.Count != 0)
             {
-                foreach (Product product in shoppingCart)
+                for(int i = 0; i < shoppingCart.Count; i++) 
                 {
-                    Console.WriteLine($"{product.Name}, {product.price},  {product.category}\n");
+                        Console.WriteLine($" {i+1}. {shoppingCart[i].Name}, {shoppingCart[i].price},  {shoppingCart[i].category}\n");
                 }
                 return true;
             }
