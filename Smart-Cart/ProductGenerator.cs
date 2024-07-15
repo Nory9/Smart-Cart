@@ -15,9 +15,9 @@ namespace Smart_Cart
         List<string> pizza = new List<string>() { " pepperoni pizza", "Hawaiian pizza", "garlic butter pizza", "margarita pizza", "potato & rosemary pizza" };
         List<string> clothingShop = new List<string>() { " jumpsuit", "jacket", "sweater", "skirt", "short", "pant", "blouse", "shirt", "t - shirts" };
 
-        public void GenerateProduct()
+        public Product GenerateProduct(ProductCategory category)
         {
-            ProductCategory category = (ProductCategory)random.Next(0, Enum.GetNames(typeof(ProductCategory)).Length);
+        //    ProductCategory category = (ProductCategory)random.Next(0, Enum.GetNames(typeof(ProductCategory)).Length);
 
             int price = (int)(random.Next(100, 10000) / 100.0);
             string name="";
@@ -40,7 +40,7 @@ namespace Smart_Cart
             Product product = new Product(name, price, category);
 
 
-
+            return product;
         }
     }
 }
